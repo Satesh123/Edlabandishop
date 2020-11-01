@@ -12,6 +12,8 @@ import org.openqa.selenium.TakesScreenshot;
 import regression.PageObject.Order_Tracking_Page;
 import regression.PageObject.Shopping_Page;
 
+import java.util.concurrent.TimeUnit;
+
 public class Shopping_StepDef extends Test_Runner {
 
     public Shopping_Page shopping_page;
@@ -21,6 +23,7 @@ public class Shopping_StepDef extends Test_Runner {
     public void start_test() {
         shopping_page = new Shopping_Page();
         order_tracking_page = new Order_Tracking_Page();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
 
@@ -35,11 +38,8 @@ public class Shopping_StepDef extends Test_Runner {
 
     @Given("^Launch Application$")
     public void launchApplication() {
-
         driver.get("https://www.edlabandishop.co.uk");
-        driver.manage().window().maximize();
-
-    }
+       }
 
     @When("^Click on search icon on homepage and type \"([^\"]*)\" and press enter$")
     public void clickOnSearchIconOnHomepageAndTypeAndPressEnter(String product)  {
