@@ -17,7 +17,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 13774808,
+  "duration": 16819868,
   "status": "passed"
 });
 formatter.scenario({
@@ -68,7 +68,7 @@ formatter.match({
   "location": "Shopping_StepDef.launchApplication()"
 });
 formatter.result({
-  "duration": 2624260949,
+  "duration": 3074401705,
   "status": "passed"
 });
 formatter.match({
@@ -81,43 +81,43 @@ formatter.match({
   "location": "Shopping_StepDef.clickOnSearchIconOnHomepageAndTypeAndPressEnter(String)"
 });
 formatter.result({
-  "duration": 975331295,
+  "duration": 872727890,
   "status": "passed"
 });
 formatter.match({
   "location": "Shopping_StepDef.addItemIntoShoppingCart()"
 });
 formatter.result({
-  "duration": 4870883210,
+  "duration": 4141187601,
   "status": "passed"
 });
 formatter.match({
   "location": "Shopping_StepDef.clickOnCheckoutButton()"
 });
 formatter.result({
-  "duration": 3227151962,
+  "duration": 4240529822,
   "status": "passed"
 });
 formatter.match({
   "location": "Shopping_StepDef.enterBillingDetailsAndClickOnProceedToPaypalButton()"
 });
 formatter.result({
-  "duration": 6045419855,
+  "duration": 5687679392,
   "status": "passed"
 });
 formatter.match({
   "location": "Shopping_StepDef.verifyYouGetTheErrorMessageSayingYouNeedToAccept()"
 });
 formatter.result({
-  "duration": 1370994194,
+  "duration": 1928470556,
   "status": "passed"
 });
 formatter.after({
-  "duration": 49254,
+  "duration": 128999,
   "status": "passed"
 });
 formatter.before({
-  "duration": 896354,
+  "duration": 6702378,
   "status": "passed"
 });
 formatter.scenario({
@@ -158,32 +158,32 @@ formatter.match({
   "location": "Shopping_StepDef.launchApplication()"
 });
 formatter.result({
-  "duration": 2061521046,
+  "duration": 4460020483,
   "status": "passed"
 });
 formatter.match({
   "location": "Shopping_StepDef.clickOnOrderTrackingLinkOnHomepageFooter()"
 });
 formatter.result({
-  "duration": 2406108149,
+  "duration": 2309298336,
   "status": "passed"
 });
 formatter.match({
   "location": "Shopping_StepDef.enterOrderIDAndBillingEmailAndClickOnTrackButton()"
 });
 formatter.result({
-  "duration": 3408896612,
+  "duration": 2080728812,
   "status": "passed"
 });
 formatter.match({
   "location": "Shopping_StepDef.youGetAnErrorMessage()"
 });
 formatter.result({
-  "duration": 25947040,
+  "duration": 25664424,
   "status": "passed"
 });
 formatter.after({
-  "duration": 17819,
+  "duration": 17612,
   "status": "passed"
 });
 });
