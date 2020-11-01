@@ -1,5 +1,8 @@
 package regression.PageObject;
 
+import com.devskiller.jfairy.Fairy;
+import com.devskiller.jfairy.producer.person.Person;
+import com.devskiller.jfairy.producer.text.TextProducer;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -37,6 +40,10 @@ public class Shopping_Page extends Base_Page {
     WebElement Proceed_to_PayPal_Btn;
     @FindBy(xpath = "//li[contains(text(),'Please read and accept the terms and conditions to')]")
     WebElement error_message;
+    @FindBy(id = "order_comments")
+    WebElement order_comments;
+    @FindBy(className = "plus")
+    WebElement plus;
 
     public void searchProduct(String product) {
         Search.click();
@@ -46,6 +53,7 @@ public class Shopping_Page extends Base_Page {
 
     public void add_Item_To_Shopping_Cart() {
         Barn_Yard_Rice.click();
+        plus.click();
         Add_To_Cart.click();
     }
 
@@ -55,17 +63,21 @@ public class Shopping_Page extends Base_Page {
     }
 
     public void billingDetails() throws InterruptedException {
-        billing_first_name.sendKeys("Test");
-        billing_last_name.sendKeys("Order");
-        billing_address_1.sendKeys("101");
-        billing_city.sendKeys("London");
-        billing_postcode.sendKeys("IG1 5SP");
-        billing_phone.sendKeys("07425369844");
-        billing_email.sendKeys("test@email.com");
-        ship_to_different_address_checkbox.click();
+        Fairy fairy = Fairy.create();
+        Person person = fairy.person();
+        TextProducer text = fairy.textProducer();
+
+        billing_first_name.sendKeys(person.getFirstName());
+        billing_last_name.sendKeys(person.getLastName());
+        billing_address_1.sendKeys(text.randomString(6));
+        billing_city.sendKeys(text.randomString(6));
+        billing_postcode.sendKeys(text.randomString(6));
+        billing_phone.sendKeys(person.getTelephoneNumber());
+        billing_email.sendKeys(person.getEmail());
+        order_comments.sendKeys(text.paragraph());
+        //  ship_to_different_address_checkbox.click();
         Thread.sleep(5000);
-//        WebDriverWait wait = new WebDriverWait(driver,5);
-//        wait.until(ExpectedConditions.visibilityOf(Proceed_to_PayPal_Btn));
+
         Actions actions = new Actions(driver);
         actions.moveToElement(Proceed_to_PayPal_Btn).click().build().perform();
 
