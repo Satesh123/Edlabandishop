@@ -1,5 +1,7 @@
 package regression.PageObject;
 
+import com.devskiller.jfairy.Fairy;
+import com.devskiller.jfairy.producer.person.Person;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,18 +25,22 @@ public class Order_Tracking_Page extends Base_Page {
     @FindBy(xpath = "//li[contains(text(),'Sorry, the order could not be found. Please contac')]")
     WebElement Error_Msg;
 
-
     public void clickOnOrderTrackingLink() {
 
         cookie_accept_btn.click();
         Order_Tracking_Link.click();
     }
-    public void enterOrderDetails(){
-        orderid.sendKeys("2536241");
-        order_email.sendKeys("test@email.com");
+
+    public void enterOrderDetails() {
+        Fairy fairy = Fairy.create();
+        Person person = fairy.person();
+
+        orderid.sendKeys(person.getTelephoneNumber());
+        order_email.sendKeys(person.getEmail());
         Track_Btn.click();
     }
-    public void errorMessage(){
+
+    public void errorMessage() {
         String error_msg = Error_Msg.getText().trim();
         String expected_error_msg = ("Sorry, the order could not be found. Please contact us if you are having difficulty finding your order details.");
         Assert.assertEquals(error_msg, expected_error_msg);
